@@ -45,7 +45,7 @@ const displayPhotos = () => {
     });
     //Create <img> for photo
     const img = document.createElement("img");
-    const h5 = document.createElement("h5");
+    const h4 = document.createElement("h4");
 
     img.setAttribute("src", photo.urls.regular);
     if (photo.alt_description === null) {
@@ -54,7 +54,7 @@ const displayPhotos = () => {
         alt: "Image",
         title: "No description",
       });
-      h5.innerText = "No description";
+      h4.innerText = "No description";
     } else {
       setAttributes(img, {
         src: photo.urls.regular,
@@ -67,7 +67,7 @@ const displayPhotos = () => {
           photo.alt_description.slice(1)
         }...`,
       });
-      h5.innerText = `${
+      h4.innerText = `${
         photo.alt_description.charAt(0).toUpperCase() +
         photo.alt_description.slice(1)
       }...`;
@@ -77,6 +77,7 @@ const displayPhotos = () => {
     // Put <img> inside <a>, then put both inside imageContainer Element
     item.appendChild(img);
     imageContainer.appendChild(item);
+    imageContainer.appendChild(h5);
   });
 };
 
@@ -93,7 +94,7 @@ const getPhotos = () => {
       .then((response) => {
         console.log(response);
         if (response.status === 403) {
-          imageContainer.innerText = `${response.status} Forbidden The server understood the request but refuses to authorize it`;
+          imageContainer.innerText = `${response.status} Forbidden Too many requests`;
           loader.hidden = true;
         }
         return response.json();
