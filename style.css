@@ -1,10 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Faster+One&family=Gloria+Hallelujah&display=swap");
+
 html {
-/* Prevents padding from adding width to the body */
-    box-sizing: border-box;
+  /* Prevents padding from adding width to the body */
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: aliceblue;
+  margin: 0;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  font-family: "Faster One", cursive;
+  font-family: "Gloria Hallelujah", cursive;
+  /* font-family: "Sans-Serif"; */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-container {
+  margin: 10px 30%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 0.5%;
+}
+
+.main-header {
+  background: whitesmoke;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  .image-container {
+    margin: 10px;
+  }
 }
