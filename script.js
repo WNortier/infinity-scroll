@@ -23,7 +23,6 @@ const imageLoaded = () => {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.hidden = true;
-    console.log("ready", ready);
     initialLoad = false;
     count = 30;
   }
@@ -33,7 +32,6 @@ const imageLoaded = () => {
 const displayPhotos = () => {
   imagesLoaded = 0;
   totalImages = photosArray.length;
-  console.log("total images", totalImages);
   photosArray.forEach((photo) => {
     //create <a></a> to link to Unsplash
     const item = document.createElement("a");
@@ -77,7 +75,7 @@ const displayPhotos = () => {
     // Put <img> inside <a>, then put both inside imageContainer Element
     item.appendChild(img);
     imageContainer.appendChild(item);
-    imageContainer.appendChild(h5);
+    imageContainer.appendChild(h4);
   });
 };
 
@@ -92,7 +90,6 @@ const getPhotos = () => {
       },
     })
       .then((response) => {
-        console.log(response);
         if (response.status === 403) {
           imageContainer.innerText = `${response.status} Forbidden Too many requests`;
           loader.hidden = true;
